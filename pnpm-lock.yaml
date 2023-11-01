@@ -17,6 +17,9 @@ importers:
       eslint:
         specifier: ^8.52.0
         version: 8.52.0
+      prettier:
+        specifier: ^3.0.3
+        version: 3.0.3
       typescript:
         specifier: <5.2.0
         version: 5.1.6
@@ -121,6 +124,9 @@ importers:
       eslint-plugin-react-refresh:
         specifier: ^0.4.3
         version: 0.4.4(eslint@8.52.0)
+      prettier:
+        specifier: ^3.0.3
+        version: 3.0.3
       vite:
         specifier: ^4.4.5
         version: 4.5.0
