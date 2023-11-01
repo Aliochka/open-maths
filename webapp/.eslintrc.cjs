@@ -17,6 +17,9 @@ module.exports = {
     }
   },
   rules: {
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-uses-react": "off",
     'react/jsx-filename-extension': [1, { extensions: [".ts", ".tsx"] }],
     'react-refresh/only-export-components': [
       'warn',

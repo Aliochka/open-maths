@@ -8,10 +8,12 @@
 import '@japa/runner'
 
 declare module '@japa/runner' {
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
   interface TestContext {
     // Extend context
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface, @typescript-eslint/no-unused-vars
   interface Test<TestData> {
     // Extend test
   }
