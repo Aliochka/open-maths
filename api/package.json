@@ -12,10 +12,12 @@
   },
   "eslintConfig": {
     "extends": [
+      "../.eslintrc.json",
       "plugin:adonis/typescriptApp",
       "prettier"
     ],
     "plugins": [
+      "adonis",
       "prettier"
     ],
     "rules": {
