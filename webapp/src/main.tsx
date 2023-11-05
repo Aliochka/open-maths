@@ -9,11 +9,13 @@ import {
 import { Root } from './routes/Root'
 import { ErrorPage } from './ErrorPage'
 import { Problem } from './routes/Problem'
+import { Home } from './routes/Home'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path="/" element={<Root />} errorElement={<ErrorPage />}>
+        <Route path="/home/" element={<Home />} />
         <Route path="/problems/:problemId" element={<Problem />} />
       </Route>
     </>
