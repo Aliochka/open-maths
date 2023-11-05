@@ -23,6 +23,7 @@ export default Env.rules({
   PG_DB_NAME: Env.schema.string(),
   APP_KEY: Env.schema.string(),
   APP_NAME: Env.schema.string(),
+  FRONTEND_URL: Env.schema.string(),
   DRIVE_DISK: Env.schema.enum(['local'] as const),
   NODE_ENV: Env.schema.enum(['development', 'production', 'test'] as const),
 })

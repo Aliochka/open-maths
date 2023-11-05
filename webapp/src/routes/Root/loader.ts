@@ -1,9 +1,9 @@
-import { Problem, getProblems } from '../../factories/problems'
+import { backendUrl } from '../../env'
 
-type Loader = Promise<{ problems: Problem[] }>
-
-export async function loader(): Loader {
-  const problems = await getProblems()
+export async function loader() {
+  const problems = await fetch(backendUrl + '/problems', {
+    credentials: 'include',
+  })
 
   return {
     problems,
