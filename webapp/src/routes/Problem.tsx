@@ -1,9 +1,9 @@
+import { useParams } from 'react-router-dom'
+import { makeProblem } from '../factories/problems'
+
 export function Problem() {
-  const problem = {
-    title: 'Problem 1',
-    description: 'This is the first problem',
-    tags: ['tag1', 'tag2'],
-  }
+  const { problemId } = useParams()
+  const problem = makeProblem({ id: Number(problemId) })
 
   return (
     <div>

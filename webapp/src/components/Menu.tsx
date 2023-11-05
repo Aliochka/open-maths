@@ -1,15 +1,19 @@
 import { Link } from 'react-router-dom'
+import { Problem } from '../factories/problems'
 
-export function Menu() {
+type Menu = {
+  problems: Problem[]
+}
+
+export function Menu({ problems }: Menu) {
   return (
     <nav>
       <ul>
-        <li>
-          <Link to="/problems/1">Problem 1</Link>
-        </li>
-        <li>
-          <Link to="/problems/2">Problem 2</Link>
-        </li>
+        {problems.map((problem) => (
+          <li key={problem.id}>
+            <Link to={`/problems/${problem.id}`}>{problem.title}</Link>
+          </li>
+        ))}
         <li>
           <Link to="/home">Home</Link>
         </li>
