@@ -1,5 +1,5 @@
 {
-  "extends": ["adonis-preset-ts/tsconfig.json", "../tsconfig.json"],
+  "extends": ["adonis-preset-ts/tsconfig.json"],
   "include": ["**/*"],
   "exclude": ["node_modules", "build"],
   "compilerOptions": {
