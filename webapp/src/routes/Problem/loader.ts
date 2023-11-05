@@ -1,10 +1,17 @@
 import { LoaderFunctionArgs } from 'react-router-dom'
-import { Problem, getProblem } from '../../factories/problems'
+import { backendUrl } from '../../env'
+import { Problem } from '../../factories/problems'
 
-type Loader = Promise<{ problem: Problem }>
+export async function loader({ params }: LoaderFunctionArgs<Problem>) {
+  const response = await fetch(backendUrl + '/problems/' + params.problemId, {
+    credentials: 'include',
+    headers: { 'Content-Type': 'application/json' },
+  })
 
-export async function loader({ params }: LoaderFunctionArgs<Problem>): Loader {
-  const problem = await getProblem(Number(params.problemId))
+  if (!response.ok) {
+    throw new Error('Failed to fetch')
+  }
+  const problem = await response.json()
 
   return {
     problem,

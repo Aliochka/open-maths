@@ -2,7 +2,7 @@ export type Problem = {
   id: number
   title: string
   description: string
-  tags: string[]
+  tags?: string[]
 }
 
 let problemId = 1

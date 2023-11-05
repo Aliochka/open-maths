@@ -8,7 +8,7 @@ export function EditProblem() {
   return (
     <div>
       <h1>Edit your problem</h1>
-      <FormProblem problem={problem} />
+      <FormProblem problem={problem} action="edit" />
     </div>
   )
 }

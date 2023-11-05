@@ -4,15 +4,19 @@ import { useState } from 'react'
 
 type FormProblem = {
   problem?: Problem
+  action: string
 }
 
-export function FormProblem({ problem }: FormProblem = {}) {
+export function FormProblem({ problem, action }: FormProblem) {
   const [title, setTitle] = useState(problem?.title ?? '')
   const [description, setDescription] = useState(problem?.description ?? '')
-  const [tags, setTags] = useState(problem?.tags.join(', ') ?? '')
+  // const [tags, setTags] = useState(problem?.tags.join(', ') ?? '')
 
   return (
-    <Form method="post">
+    <Form
+      method={action === 'create' ? 'post' : 'put'}
+      action={problem ? `/problems/${problem.id}/edit` : '/problems/create'}
+    >
       <div>
         <label>
           Title
@@ -34,7 +38,7 @@ export function FormProblem({ problem }: FormProblem = {}) {
           />
         </label>
       </div>
-      <div>
+      {/* <div>
         <label>
           Tags
           <input
@@ -44,7 +48,7 @@ export function FormProblem({ problem }: FormProblem = {}) {
             onChange={(e) => setTags(e.target.value)}
           />
         </label>
-      </div>
+      </div> */}
       <button type="submit">Submit</button>
     </Form>
   )

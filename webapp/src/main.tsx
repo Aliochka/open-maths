@@ -14,6 +14,7 @@ import { Home } from './routes/Home'
 import { CreateProblem } from './routes/Problem/CreateProblem'
 import { loader as problemLoader } from './routes/Problem/loader'
 import { EditProblem } from './routes/Problem/EditProblem'
+import { create, edit } from './routes/Problem/actions'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -25,7 +26,11 @@ const router = createBrowserRouter(
         loader={rootLoader}
       >
         <Route path="/home/" element={<Home />} />
-        <Route path="/problems/create" element={<CreateProblem />} />
+        <Route
+          path="/problems/create"
+          element={<CreateProblem />}
+          action={create}
+        />
         <Route
           path="/problems/:problemId"
           element={<Problem />}
@@ -35,6 +40,7 @@ const router = createBrowserRouter(
           path="/problems/:problemId/edit"
           element={<EditProblem />}
           loader={problemLoader}
+          action={edit}
         />
       </Route>
     </>

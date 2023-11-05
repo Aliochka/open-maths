@@ -22,5 +22,5 @@ import Route from '@ioc:Adonis/Core/Route'
 
 Route.get('/problems', 'ProblemsController.index')
 Route.get('/problems/:id', 'ProblemsController.show')
-Route.post('/problems', 'ProblemsController.create')
-Route.put('/problems/:id', 'ProblemsController.update')
+Route.post('/problems/create', 'ProblemsController.create')
+Route.put('/problems/:id/edit', 'ProblemsController.update')
