@@ -9,8 +9,11 @@ import {
 import { Root } from './routes/Root/Root'
 import { loader as rootLoader } from './routes/Root/loader'
 import { ErrorPage } from './ErrorPage'
-import { Problem } from './routes/Problem'
+import { Problem } from './routes/Problem/Problem'
 import { Home } from './routes/Home'
+import { CreateProblem } from './routes/Problem/CreateProblem'
+import { loader as problemLoader } from './routes/Problem/loader'
+import { EditProblem } from './routes/Problem/EditProblem'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,7 +25,17 @@ const router = createBrowserRouter(
         loader={rootLoader}
       >
         <Route path="/home/" element={<Home />} />
-        <Route path="/problems/:problemId" element={<Problem />} />
+        <Route path="/problems/create" element={<CreateProblem />} />
+        <Route
+          path="/problems/:problemId"
+          element={<Problem />}
+          loader={problemLoader}
+        />
+        <Route
+          path="/problems/:problemId/edit"
+          element={<EditProblem />}
+          loader={problemLoader}
+        />
       </Route>
     </>
   )

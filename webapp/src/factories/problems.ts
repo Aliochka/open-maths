@@ -22,3 +22,7 @@ export function makeProblem(problem?: Partial<Problem>) {
 export async function getProblems() {
   return [makeProblem(), makeProblem()]
 }
+
+export async function getProblem(problemId: number) {
+  return makeProblem({ id: problemId })
+}
