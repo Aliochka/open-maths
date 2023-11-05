@@ -6,12 +6,17 @@ import {
   createRoutesFromElements,
   Route,
 } from 'react-router-dom'
-import { Root } from './routes/root'
+import { Root } from './routes/Root'
 import { ErrorPage } from './ErrorPage'
+import { Problem } from './routes/Problem'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Root />} errorElement={<ErrorPage />} />
+    <>
+      <Route path="/" element={<Root />} errorElement={<ErrorPage />}>
+        <Route path="/problems/:problemId" element={<Problem />} />
+      </Route>
+    </>
   )
 )
 
